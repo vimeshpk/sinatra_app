@@ -1,0 +1,12 @@
+<h2>Users</h2>
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.name %> - <%= user.email %></li>
+  <% end %>
+</ul>
+
+<form action="/users" method="post">
+  <input type="text" name="name" placeholder="Name">
+  <input type="email" name="email" placeholder="Email">
+  <button type="submit">Add User</button>
+</form>

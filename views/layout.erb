@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Sinatra Site</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>My Sinatra App</h1>
+      <nav>
+      <a href="/">Home</a> | <a href="/about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %> 
+    </main>
+
+    <footer>
+      <p>&copy; <%= Time.now.year %> My Sinatra App</p>
+    </footer>
+  </body>
+</html>
