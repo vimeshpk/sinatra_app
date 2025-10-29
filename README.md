@@ -1,72 +1,131 @@
 # 💎 About Sinatra
 
-Sinatra is a DSL (Domain Specific Language) for quickly building web applications in Ruby.
+**Sinatra** is a DSL (Domain Specific Language) for quickly building web applications in **Ruby**.
+It’s lighter and simpler than **Ruby on Rails**, making it perfect for:
 
-It’s lighter and simpler than Ruby on Rails.
+* 🧩 Small applications
+* ⚙️ Microservices
+* 🌐 APIs where Rails would be “too heavy”
 
-Perfect for small apps, microservices, or APIs where Rails would be “too heavy.”
+---
 
-⚙️ Steps to Create and Execute a Sinatra App
+## ⚙️ Steps to Create and Execute a Sinatra App
 
-1️ Create a new project folder
+### 1️⃣ Create a new project folder
+
+```bash
 mkdir sinatra_app
+```
 
-2️ Move into the project directory
+### 2️⃣ Move into the project directory
+
+```bash
 cd sinatra_app
+```
 
-3️ Create basic folder structure
+### 3️⃣ Create basic folder structure
+
+```bash
 mkdir models controllers views db public
+```
 
- models       → For database models
- controllers  → For logic and routes (optional for large apps)
- views        → For HTML/ERB templates
- db           → For migrations or seeds
- public       → For static files (CSS, JS, images)
+**Purpose of folders:**
 
- 4️ Create main app and config files
+* **models/** → For database models
+* **controllers/** → For logic and routes (optional for large apps)
+* **views/** → For HTML/ERB templates
+* **db/** → For migrations or seeds
+* **public/** → For static files (CSS, JS, images)
+
+---
+
+### 4️⃣ Create main app and config files
+
+```bash
 touch app.rb config.ru Gemfile
+```
 
- app.rb       → Main Sinatra application file
- config.ru    → Rack configuration file to start the server
- Gemfile      → To list and manage dependencies
+**File roles:**
 
-5️ Add gems to Gemfile (open Gemfile and add)
-   Example content:
-   source 'https://rubygems.org'
-   gem 'sinatra'
-   gem 'sinatra-contrib'
-   gem 'activerecord'
-   gem 'rake'
-   gem 'sqlite3'
+* `app.rb` → Main Sinatra application file
+* `config.ru` → Rack configuration file to start the server
+* `Gemfile` → To list and manage dependencies
 
-6️ Install required gems
+---
+
+### 5️⃣ Add gems to `Gemfile`
+
+Example content:
+
+```ruby
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'activerecord'
+gem 'rake'
+gem 'sqlite3'
+```
+
+---
+
+### 6️⃣ Install required gems
+
+```bash
 bundle install
+```
 
-7️ Create a database migration (if using ActiveRecord)
+---
+
+### 7️⃣ Create a database migration (if using ActiveRecord)
+
+```bash
 bundle exec rake db:create_migration NAME=create_users
+```
 
-8️ Apply migrations
+---
+
+### 8️⃣ Apply migrations
+
+```bash
 bundle exec rake db:migrate
+```
 
-9️ Install Sinatra globally (optional if not in Gemfile)
-   gem install sinatra sinatra-contrib
+---
 
-10 Start the Sinatra app on port 4567
+### 9️⃣ Install Sinatra globally (optional if not in Gemfile)
+
+```bash
+gem install sinatra sinatra-contrib
+```
+
+---
+
+### 🔟 Start the Sinatra app on port 4567
+
+```bash
 rackup -p 4567
+```
 
-🧩 Example: Minimal app.rb
+---
+
+## 🧩 Example: Minimal `app.rb`
+
+```ruby
 require 'sinatra'
 
-Simple route
+# Simple route
 get '/' do
   "Hello, Sinatra!"
 end
+```
 
+---
 
-Run it with:
+### ▶️ Run the App
 
+```bash
 ruby app.rb
+```
 
-
-Then open your browser and visit:
-👉 http://localhost:4567
+Visit: [http://localhost:4567](http://localhost:4567) 🌐
